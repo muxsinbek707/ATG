@@ -37,6 +37,27 @@ document.getElementById('subjBody').innerHTML = subjects.map(s=>`
   </tr>
 `).join('');
 
+// ---- mobile hamburger menu ----
+const sidebar = document.getElementById('sidebar');
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const sidebarClose = document.getElementById('sidebarClose');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openSidebar(){
+  sidebar.classList.add('open');
+  sidebarOverlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function closeSidebar(){
+  sidebar.classList.remove('open');
+  sidebarOverlay.classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+hamburgerBtn.addEventListener('click', openSidebar);
+sidebarClose.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeSidebar);
+
 // ---- view routing ----
 function showView(name){
   document.querySelectorAll('.view').forEach(v=>{
@@ -50,7 +71,10 @@ function showView(name){
 }
 
 document.querySelectorAll('.nav-item').forEach(item=>{
-  item.addEventListener('click', ()=> showView(item.dataset.view));
+  item.addEventListener('click', ()=>{
+    showView(item.dataset.view);
+    closeSidebar();
+  });
 });
 
 // shortcuts from dashboard cards / links that jump straight into a view
