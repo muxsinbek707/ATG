@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ATG — AI Test Generator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-badge">🧠</div>
+      <h1>ATG</h1>
+      <p>AI TEST GENERATOR</p>
+    </div>
+    <nav id="nav">
+      <div class="nav-item active" data-view="dashboard"><span class="ic">🏠</span>Dashboard</div>
+      <div class="nav-item" data-view="test"><span class="ic">📝</span>Test yaratish</div>
+      <div class="nav-item" data-view="mytests"><span class="ic">📁</span>Mening testlarim</div>
+      <div class="nav-item" data-view="shablonlar"><span class="ic">📋</span>Shablonlar</div>
+      <div class="nav-item" data-view="natijalar"><span class="ic">📈</span>Natijalar</div>
+      <div class="nav-item" data-view="statistika"><span class="ic">📊</span>Statistika</div>
+      <div class="nav-item" data-view="settings"><span class="ic">⚙️</span>Sozlamalar</div>
+    </nav>
+
+    <div class="credits-box">
+      <h4>AI Kreditlar</h4>
+      <div style="font-size:20px;font-weight:700;margin-bottom:8px;">120 <span style="font-size:12px;color:var(--sub);font-weight:500;">/ 200</span></div>
+      <div class="bar-track"><div class="bar-fill" style="width:60%;"></div></div>
+      <small>60% foydalanilgan</small>
+      <button class="btn-outline">Kreditlar sotib olish</button>
+    </div>
+
+    <div class="premium-box">
+      <h4>Premium imkoniyatlarga ega bo'ling!</h4>
+      <ul>
+        <li>Cheksiz test yaratish</li>
+        <li>PDF, DOCX import</li>
+        <li>Kengaytirilgan statistika</li>
+        <li>Reklamasiz foydalanish</li>
+      </ul>
+      <button class="btn-premium">🏆 Premium ga o'tish</button>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">AI</div>
+      <div>
+        <p class="name">Abdulloh Ismoilov</p>
+        <p class="plan">Premium reja</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ============ DASHBOARD VIEW ============ -->
+    <section class="view" id="view-dashboard">
+
+      <div class="card topbar">
+        <div>
+          <h2>Xush kelibsiz, Abdulloh! 👋</h2>
+          <p>AI yordamida testlar yaratish va natijalarni boshqarish</p>
+        </div>
+        <div class="top-actions">
+          <div class="bell">🔔<span>3</span></div>
+          <div class="top-avatar"></div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="card stat-card">
+          <div class="stat-icon icon-blue">📝</div>
+          <div class="label">Jami testlar</div>
+          <div class="value">24</div>
+          <div class="delta">↑ 12% bu oyda</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-icon icon-green">🎓</div>
+          <div class="label">Yaratilgan savollar</div>
+          <div class="value">568</div>
+          <div class="delta">↑ 18% bu oyda</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-icon icon-orange">🎯</div>
+          <div class="label">O'rtacha ball</div>
+          <div class="value">85%</div>
+          <div class="delta">↑ 8% bu oyda</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-icon icon-purple">💎</div>
+          <div class="label">AI Kreditlar</div>
+          <div class="value">120 <span style="font-size:14px;color:var(--sub);font-weight:500;">/ 200</span></div>
+          <div class="bar-track" style="margin-top:2px;"><div class="bar-fill" style="width:60%;"></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title">Tezkor harakatlar</div>
+        <div class="actions-grid">
+          <div class="action-card action-indigo" data-goto="test">
+            <div>
+              <h4>Yangi test yaratish</h4>
+              <p>AI yordamida yangi test yaratishni boshlang</p>
+            </div>
+            <div class="plus">+</div>
+          </div>
+          <div class="action-card action-green" data-goto="test">
+            <div>
+              <h4>Fayldan test yaratish</h4>
+              <p>PDF, DOCX yoki TXT fayl yuklang</p>
+            </div>
+            <div class="plus">+</div>
+          </div>
+          <div class="action-card action-purple" data-goto="test">
+            <div>
+              <h4>Mavzudan test yaratish</h4>
+              <p>Mavzu kiriting, AI test yaratadi</p>
+            </div>
+            <div class="plus" style="background:var(--purple);">📖</div>
+          </div>
+          <div class="action-card action-orange" data-goto="shablonlar">
+            <div>
+              <h4>Shablonlardan foydalanish</h4>
+              <p>Tayyor shablonlardan foydalaning</p>
+            </div>
+            <div class="plus" style="background:var(--orange);">🗂️</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-head">
+          <h5 style="margin:0;font-size:16px;font-weight:700;">So'nggi testlar</h5>
+          <span class="link" data-goto="mytests">Barchasini ko'rish</span>
+        </div>
+        <div class="tests-list" id="testsList"></div>
+      </div>
+
+    </section>
+
+    <!-- ============ TEST YARATISH VIEW ============ -->
+    <section class="view" id="view-test" hidden>
+      <div class="card panel panel-page">
+        <h3>Yangi test yaratish</h3>
+        <p class="sub">Test ma'lumotlarini kiriting va AI ga topshiring.</p>
+
+        <div class="steps">
+          <div class="step active"><div class="circ">1</div><div class="lbl">Ma'lumot</div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="circ">2</div><div class="lbl">AI yaratmoqda</div></div>
+          <div class="step-line"></div>
+          <div class="step"><div class="circ">3</div><div class="lbl">Natija</div></div>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label>Fan / Mavzu</label>
+            <select class="select">
+              <option>Fan yoki mavzuni tanlang</option>
+              <option>Ingliz tili</option>
+              <option>Matematika</option>
+              <option>Fizika</option>
+              <option>Biologiya</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Ma'lumot manbai</label>
+            <div class="src-tabs" id="srcTabs" style="margin-top:1px;">
+              <div class="src-tab active" data-s="matn"><span class="i">📄</span>Matndan</div>
+              <div class="src-tab" data-s="fayl"><span class="i">📁</span>Fayldan</div>
+              <div class="src-tab" data-s="rasm"><span class="i">🖼️</span>Rasmdan</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Qiyinchilik darajasi</label>
+          <div class="seg" id="diffSeg">
+            <button data-d="oson">Oson</button>
+            <button class="active" data-d="orta">O'rta</button>
+            <button data-d="qiyin">Qiyin</button>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label>Savollar soni</label>
+            <div class="stepper">
+              <button id="minusBtn">−</button>
+              <div class="num" id="qCount">20</div>
+              <button id="plusBtn">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>Til</label>
+            <select class="select">
+              <option>O'zbek tili</option>
+              <option>Rus tili</option>
+              <option>Ingliz tili</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Savol turi</label>
+          <div class="checks">
+            <label class="chk"><input type="checkbox" checked> Test (variantli)</label>
+            <label class="chk"><input type="checkbox"> To'g'ri / Noto'g'ri</label>
+            <label class="chk"><input type="checkbox"> Qisqa javob</label>
+            <label class="chk"><input type="checkbox"> Moslashtirish</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Matn kiriting</label>
+          <p style="margin:0 0 8px;font-size:12px;color:var(--sub);">Test uchun kerakli matnni kiriting. AI ushbu matndan savollar yaratadi.</p>
+          <textarea id="txtInput" placeholder="Matnni shu yerga kiriting..." maxlength="5000"></textarea>
+          <div class="charcount"><span id="cc">0</span> / 5000</div>
+        </div>
+
+        <button class="submit-btn" id="submitBtn">AI ga topshirish ✨</button>
+      </div>
+    </section>
+
+    <!-- ============ MENING TESTLARIM VIEW ============ -->
+    <section class="view" id="view-mytests" hidden>
+      <div class="card">
+        <div class="section-head">
+          <h5 style="margin:0;font-size:16px;font-weight:700;">Mening testlarim</h5>
+        </div>
+        <div class="tests-list" id="testsListFull"></div>
+      </div>
+    </section>
+
+    <!-- ============ SHABLONLAR VIEW ============ -->
+    <section class="view" id="view-shablonlar" hidden>
+      <div class="card empty-view">
+        <div class="empty-ic">🗂️</div>
+        <h4>Shablonlar</h4>
+        <p>Tayyor shablonlar tez orada shu yerda paydo bo'ladi.</p>
+      </div>
+    </section>
+
+    <!-- ============ NATIJALAR VIEW ============ -->
+    <section class="view" id="view-natijalar" hidden>
+      <div class="card" style="padding:18px 20px;">
+        <div class="head" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+          <h5 style="margin:0;font-size:15px;">Fanlar bo'yicha natijalar</h5>
+          <span class="link">Barchasini ko'rish</span>
+        </div>
+        <table class="subj-table">
+          <thead><tr><th>Fan</th><th>Testlar soni</th><th style="text-align:right;">O'rtacha ball</th></tr></thead>
+          <tbody id="subjBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ STATISTIKA VIEW ============ -->
+    <section class="view" id="view-statistika" hidden>
+      <div class="bottom-grid">
+        <div class="card bottom-card">
+          <div class="head"><h5>Statistika</h5><span class="select-mini">Oxirgi 30 kun ▾</span></div>
+          <div class="stat-rows">
+            <div class="row"><div class="sq" style="background:var(--blue-soft);"></div><div class="txt">Yaratilgan testlar</div><div class="val">2%</div></div>
+            <div class="row"><div class="sq" style="background:var(--green-soft);"></div><div class="txt">Yaratilgan savollar</div><div class="up">↑ 18%</div></div>
+            <div class="row"><div class="sq" style="background:var(--green-soft);"></div><div class="txt">O'rtacha ball</div><div class="val">85%</div></div>
+            <div class="row"><div class="sq" style="background:var(--orange-soft);"></div><div class="txt">Test mashqlari</div><div class="up">↑ 16%</div></div>
+          </div>
+        </div>
+
+        <div class="card bottom-card">
+          <div class="head"><h5>Faollik grafigi</h5><span class="select-mini">Testlar soni ▾</span></div>
+          <canvas id="activityChart" height="150"></canvas>
+        </div>
+
+        <div class="card bottom-card">
+          <div class="head"><h5>Savol turlari bo'yicha</h5></div>
+          <canvas id="donutChart" height="150"></canvas>
+          <div class="legend">
+            <div class="item"><span class="dot" style="background:var(--indigo);"></span>Test (variantli) 70%</div>
+            <div class="item"><span class="dot" style="background:var(--blue);"></span>To'g'ri / Noto'g'ri 15%</div>
+            <div class="item"><span class="dot" style="background:var(--purple);"></span>Qisqa javob 10%</div>
+            <div class="item"><span class="dot" style="background:var(--green);"></span>Moslashtirish 5%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOZLAMALAR VIEW ============ -->
+    <section class="view" id="view-settings" hidden>
+      <div class="card empty-view">
+        <div class="empty-ic">⚙️</div>
+        <h4>Sozlamalar</h4>
+        <p>Sozlamalar bo'limi tez orada ishga tushadi.</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
